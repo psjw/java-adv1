@@ -6,7 +6,7 @@ public class BadThreadMain {
 
         HelloThread helloThread = new HelloThread();
         System.out.println(Thread.currentThread().getName() + ": start() 호출 전");
-        helloThread.run();
+        helloThread.run(); //직접 실행
         System.out.println(Thread.currentThread().getName() + ": start() 호출 후");
 
         System.out.println(Thread.currentThread().getName() + ": main() end");
