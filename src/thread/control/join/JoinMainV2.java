@@ -1,11 +1,11 @@
-package thread.join;
+package thread.control.join;
 
 import static util.MyLogger.log;
 import static util.ThreadUtils.sleep;
 
-public class JoinMainV3 {
+public class JoinMainV2 {
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
         log("Start");
         SumTask task1 = new SumTask(1, 50);
         SumTask task2 = new SumTask(51, 100);
@@ -15,12 +15,10 @@ public class JoinMainV3 {
         thread2.start();
 
 
-        //스레드가 종료될때 까지 대기
-        log("join() - main 스레드가 thread1, thread2 종료까지 대기");
-        thread1.join();
-        thread2.join();
-        log("main 스레드 대기 완료");
-
+        //정확한 타이밍을 맞추어 기다리기 어려웆
+        log("main 스레드 sleep()");
+        sleep(3000);
+        log("main 스레드 깨어남");
 
         log("task1.result =" + task1.result);
         log("task2.result =" + task2.result);
