@@ -12,6 +12,7 @@ public class ThreadStopMainV4 {
         sleep(100); //시간을 줄임
         log("작업 중단 지시 thread.interrupt()");
         thread.interrupt();
+        //thread.stop(); //예전에만 동작했음 -> 이제 미사용 (Thread가 자원정리등 마무리할 시간이 예측이 안됨)
         log("work 스레드 인터럽트 상태1 = " + thread.isInterrupted());
 
     }
