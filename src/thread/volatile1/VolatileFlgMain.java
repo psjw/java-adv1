@@ -1,4 +1,4 @@
-package thread.control.volatile1;
+package thread.volatile1;
 
 import static util.MyLogger.log;
 import static util.ThreadUtils.sleep;

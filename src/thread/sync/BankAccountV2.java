@@ -3,16 +3,16 @@ package thread.sync;
 import static util.MyLogger.log;
 import static util.ThreadUtils.sleep;
 
-public class BankAccountV1 implements BackAccount {
+public class BankAccountV2 implements BackAccount {
 
     volatile private int balance;
 
-    public BankAccountV1(int initialBalance) {
+    public BankAccountV2(int initialBalance) {
         this.balance = initialBalance;
     }
 
     @Override
-    public boolean withdraw(int account) {
+    public synchronized boolean withdraw(int account) {
         log("거래 시작 : " + getClass().getSimpleName());
         // 잔고가 출금액보다 적으면, 진행하면 안됨
 
@@ -32,7 +32,7 @@ public class BankAccountV1 implements BackAccount {
     }
 
     @Override
-    public int getBalance() {
+    public synchronized int getBalance() {
         return balance;
     }
 }
