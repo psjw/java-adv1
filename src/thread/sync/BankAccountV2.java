@@ -16,6 +16,7 @@ public class BankAccountV2 implements BackAccount {
         log("거래 시작 : " + getClass().getSimpleName());
         // 잔고가 출금액보다 적으면, 진행하면 안됨
 
+        // ==임계 영역 시작==
         log("[검증 시작] 출금액 : " + account + ", 잔액  : " + balance);
         if (balance < account) {
             log("[검증실패] 출금액: " + account + ", 잔액 : " + balance);
@@ -26,6 +27,7 @@ public class BankAccountV2 implements BackAccount {
         sleep(1000); //1초 대기 -> 출금에 걸리는 시간으로 가정
         balance = balance - account;
         log("[출금완료] 출금액 : " + account + ", 잔액  : " + balance);
+        // ==임계 영역 종료==
 
         log("거래 종료");
         return true;
