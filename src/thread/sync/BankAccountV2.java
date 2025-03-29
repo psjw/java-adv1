@@ -28,7 +28,7 @@ public class BankAccountV2 implements BackAccount {
         log("[출금완료] 출금액 : " + account + ", 잔액  : " + balance);
 
         log("거래 종료");
-        return false;
+        return true;
     }
 
     @Override
