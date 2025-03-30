@@ -1,6 +1,6 @@
 package thread.sync;
 
-public interface BackAccount {
+public interface BankAccount {
 
     boolean withdraw(int account); //출금
 

@@ -1,10 +1,10 @@
 package thread.sync;
 
 public class WithdrawTask implements Runnable {
-    private BackAccount account;
+    private BankAccount account;
     private int amount;
 
-    public WithdrawTask(BackAccount account, int amount) {
+    public WithdrawTask(BankAccount account, int amount) {
         this.account = account;
         this.amount = amount;
     }
