@@ -21,4 +21,19 @@ public abstract class ExecutorUtils {
             log(executorService);
         }
     }
+
+    public static void printState(ExecutorService executorService, String taskName) {
+        //ThreadPoolExecutor abc = (ThreadPoolExecutor) executorService;
+        // if문에서 바로 할 수 있게 바뀜
+        if (executorService instanceof ThreadPoolExecutor poolExecutor) {
+            int pool = poolExecutor.getPoolSize();
+            int active = poolExecutor.getActiveCount();
+            int queued = poolExecutor.getQueue().size();
+            long completedTask = poolExecutor.getCompletedTaskCount();
+            log(taskName + " -> [pool=" + pool + ", active=" + active + ", queuedTasks=" + queued +
+                    ", completedTasks=" + completedTask + "]");
+        } else {
+            log(executorService);
+        }
+    }
 }
