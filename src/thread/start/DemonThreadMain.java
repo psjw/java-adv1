@@ -14,13 +14,14 @@ public class DemonThreadMain {
 
         @Override
         public void run() {
-            System.out.println(Thread.currentThread().getName() + ": run()");
+            System.out.println(Thread.currentThread().getName() + ": run() start");
 
             try {
                 Thread.sleep(10000);//10초간 실행
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
+            System.out.println(Thread.currentThread().getName() + ": run() end");
         }
 
 
